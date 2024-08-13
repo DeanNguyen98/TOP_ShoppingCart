@@ -1,0 +1,35 @@
+.main {
+    height: calc(100vh - 83px);
+    background-image: url(../assets/hero-img.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    top: 70%;
+    padding-left: 5%;
+     a {
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #FEFEFE;
+     }
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust overlay opacity */
+    z-index: 1;
+  }
