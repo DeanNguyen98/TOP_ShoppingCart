@@ -1,11 +1,12 @@
-.navCtn {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    align-items: center;
-}
-
+$header-clr:#FEFEFE;
 .navlinks {
     display: flex;
-    gap: 45px;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    a {
+        text-decoration: none;
+        color: $header-clr;
+    }
 }
+
