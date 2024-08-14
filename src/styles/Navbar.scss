@@ -8,5 +8,8 @@ $header-clr:#FEFEFE;
         text-decoration: none;
         color: $header-clr;
     }
+    a:hover {
+        border-bottom: 1px solid $header-clr;
+    }
 }
 
