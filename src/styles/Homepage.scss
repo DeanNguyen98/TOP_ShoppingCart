@@ -1,5 +1,5 @@
 .main {
-    height: calc(100vh - 83px);
+    height: 100vh;
     background-image: url(../assets/hero-img.jpg);
     background-size: cover;
     background-position: center;
@@ -20,6 +20,12 @@
         padding: 10px;
         margin-top: 20px;
         background-color: #FEFEFE;
+        transition: background-color .2s ease-in-out;
+        font-size: 1.2rem;
+     }
+     a:hover {
+        color: white;
+        background-color: black ;
      }
 }
 
