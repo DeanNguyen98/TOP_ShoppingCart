@@ -4,9 +4,11 @@ $header-clr:#FEFEFE;
     justify-content: center;
     gap: 40px;
     align-items: center;
+    font-size: .9rem;
     a {
         text-decoration: none;
         color: $header-clr;
+        border: 1px solid transparent;
     }
     a:hover {
         border-bottom: 1px solid $header-clr;
