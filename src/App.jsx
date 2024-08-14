@@ -1,11 +1,14 @@
 import './App.css'
-import Header from './components/Header'
-import Homepage from './components/Homepage'
+import Header from './components/Header.jsx'
+import { Outlet } from 'react-router-dom'
+
 function App() {
   return (
     <>
-       <Header/>
-       <Homepage/>
+      <Header/>
+        <div className="main-section">
+          <Outlet/>
+        </div>
     </>
   )
 }
