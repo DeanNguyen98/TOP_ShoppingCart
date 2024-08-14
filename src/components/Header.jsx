@@ -3,11 +3,16 @@ import "../styles/Header.scss"
 
 export default function Header() {
     return (
-        <>
-            <header className="header">
+        <div className="header-ctn">
+            <div className="header">
                 <h1>NICE.</h1>
-                <Navbar/>
-            </header>
-        </>
+                <div className="icon-wrapper">
+                <i className="fa-solid fa-magnifying-glass"></i>
+                <a href="cart"><i className="fa-solid fa-cart-shopping"></i></a>
+                
+                </div>
+            </div>
+            <Navbar/>
+        </div>
     )
 }

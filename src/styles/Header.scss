@@ -1,18 +1,39 @@
 $header-clr: #FEFEFE;
 
+.header-ctn {
+    position: relative;
+    background-color: rgba(0, 0 , 0, 0.4);
+    z-index: 2;
+    transition: background-color 0.2s ease-in-out
+}
+
+.header-ctn:hover {
+    background-color: rgba(255,255,255,0.1);
+}
 .header {
+    position: relative;
     font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
     color: $header-clr;
-    background-color: rgba(0, 0 , 0, 0.9);
     h1 {
         font-size: 3rem;
+        text-align: center;
     }
-    a {
+}
+
+.icon-wrapper {
         text-decoration: none;
         color: $header-clr;
-    }
+        right: 0;
+        position: absolute;
+        top: 30%;
+        margin-right: 25px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        a {
+            text-decoration: none;
+            color: $header-clr;
+        }
 }
