@@ -5,14 +5,26 @@ import Homepage from './pages/Homepage'
 import Shop from './pages/Shop.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import ProductInfo from './pages/ProductInfo.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
     children: [
-      {index: true, element:<Homepage/>},
-      {path: 'shop', element: <Shop/>}
+      {
+        index: true, 
+        element:<Homepage/>
+      },
+      {
+        path: 'shop', 
+        element: <Shop/>,
+      },
+      {
+        path:"productInfo/:productId", 
+        element:<ProductInfo/>
+      }
+  
     ]
   }
 ])
