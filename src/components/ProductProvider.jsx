@@ -9,6 +9,7 @@ export const ProductProvider = ({children}) => {
             .then(res=>res.json())
             .then(json=> setproducts(json));
   },[]);
+  console.log(products);
   return (
     <productContext.Provider value= {products}>
       {children}
