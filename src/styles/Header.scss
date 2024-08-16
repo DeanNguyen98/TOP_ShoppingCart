@@ -2,7 +2,7 @@ $header-clr: #FEFEFE;
 
 .header-ctn {
     position: relative;
-    background-color: rgba(0, 0 , 0, 0.6);
+    background-color: rgba(0, 0 , 0, 0.8);
     z-index: 2;
     transition: background-color 0.2s ease-in-out;
     top: 0;
@@ -11,7 +11,7 @@ $header-clr: #FEFEFE;
 }
 
 .header-ctn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 1);
 }
 .header {
     position: relative;
