@@ -9,7 +9,7 @@ export default function Header() {
                 <h1><Link to="/">NICE</Link>.</h1>
                 <div className="icon-wrapper">
                 <i className="fa-solid fa-magnifying-glass"></i>
-                <a href="cart"><i className="fa-solid fa-cart-shopping"></i></a>
+                <Link to="cart"><i className="fa-solid fa-cart-shopping"></i></Link>
                 
                 </div>
             </div>
