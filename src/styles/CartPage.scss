@@ -30,9 +30,16 @@ $border-clr: #F7F5F2;
 
 .checkout-btn {
     padding: 10px;
-    margin: 0 auto;
+    align-self: flex-start;
     background-color: black;
     color: #fefefe;
     border: 1px solid black;
     font-size: 1.12rem;
+}
+
+.cart_totalPrice {
+    align-self: flex-start;
+    padding-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
