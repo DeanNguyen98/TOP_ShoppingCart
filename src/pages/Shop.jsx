@@ -1,9 +1,23 @@
 import "../styles/Shop.scss"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { productContext } from "../components/ProductProvider";
 import { Link } from "react-router-dom";
 export default function Shop () {
     const products = useContext(productContext);
+    const [selectedCategories, setSelectedCategories] = useState([]);
+    
+    // Handle category checkbox change
+    const handleCategoryChange = (event) => {
+        const { name, checked } = event.target;
+        setSelectedCategories(prev => 
+            checked ? [...prev, name] : prev.filter(category => category !== name)
+        );
+    };
+
+    // Filter products based on selected categories
+    const filteredProducts = products.filter(product =>
+        selectedCategories.length === 0 || selectedCategories.includes(product.category)
+    );
     return (
         <div className="shop-page">
             <div className="result-navbar">
@@ -26,26 +40,29 @@ export default function Shop () {
                     <div className="filter-option-content">
                         <ul className="items">
                             <li className="filter-item">
-                                <input type="checkbox" name="clothes" id="clothes"/>
-                                <label htmlFor="clothes">Clothes</label>
+                                <input type="checkbox" name="men's clothing" id="men's clothing"  onChange={handleCategoryChange}/>
+                                <label htmlFor="clothes">Men&apos;s Clothing</label>
                             </li>
                             <li className="filter-item">
-                                <input type="checkbox" name="electronics" id="electronics"/>
+                                <input type="checkbox" name="electronics" id="electronics"  
+                                onChange={handleCategoryChange}/>
                                 <label htmlFor="electronics">Electronics</label>
                             </li>
                             <li className="filter-item">
-                                <input type="checkbox" name="hardware" id="hardware"/>
-                                <label htmlFor="hardware">Jewelry</label>
+                                <input type="checkbox" name="jewelery" id="jewelery"
+                                 onChange={handleCategoryChange}/>
+                                <label htmlFor="jewelery">Jewelry</label>
                             </li>
                             <li className="filter-item">
-                                <input type="checkbox" name="jewelry" id="jewelry"/>
-                                <label htmlFor="jewelry">Clothes</label>
+                                <input type="checkbox" name="women's clothing" id="women's clothing"
+                                 onChange={handleCategoryChange}/>
+                                <label htmlFor="women's clothing">Women&apos;s clothing</label>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="product-ctn">
-                    {products.map(product => {
+                    {filteredProducts.map(product => {
                     return (                     
                             <div className="product" key={product.id}>
                                 <Link to={`/productInfo/${product.id}`}>
