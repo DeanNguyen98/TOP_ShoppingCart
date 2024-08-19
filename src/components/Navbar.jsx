@@ -4,10 +4,8 @@ export default function Navbar() {
     return (
             <div className="navlinks">
                 <a href="/shop">Shop</a>
-                <a href="#">Electronics</a>
-                <a href="#">Clothes</a>
-                <a href="#">Hardware</a>
-                <a href="#">About</a>
+                <a href="#">Catalogue</a>
+                <a href="#">About Us</a>
             </div>
     )
 }
