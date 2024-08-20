@@ -5,9 +5,7 @@ $header-clr: #FEFEFE;
     background-color: rgba(0, 0 , 0, 0.8);
     z-index: 2;
     transition: background-color 0.2s ease-in-out;
-    top: 0;
-    right: 0;
-    left:0;
+    overflow: hidden;
 }
 
 .header-ctn:hover {
@@ -15,17 +13,22 @@ $header-clr: #FEFEFE;
 }
 .header {
     position: relative;
-    font-size: 1.5rem;
     padding: 10px;
     color: $header-clr;
-    h1 {
-        font-size: 3rem;
-        text-align: center;
-    }
     a {
         text-decoration: none;
         color: $header-clr;
     }
+}
+.header-title {
+    font-size: 3rem;
+    text-align: center;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+}
+
+.header-title:hover {
+    transform: scale(1.1)
 }
 
 .icon-wrapper {
@@ -43,4 +46,30 @@ $header-clr: #FEFEFE;
             text-decoration: none;
             color: $header-clr;
         }
+        
+}
+
+
+
+.cart-icon-wrapper {
+    position: relative;
+    transform: scale(1);
+    transition: transform .3s ease-in-out
+}
+
+.cart-icon-wrapper:hover {
+    transform: scale(1.1);
+}
+
+.item-counter {
+    position: absolute;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    background: red;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 50%;
+    right: -35%;
+    top: 45%;
 }
