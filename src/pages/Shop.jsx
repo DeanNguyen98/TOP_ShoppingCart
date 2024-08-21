@@ -2,10 +2,11 @@ import "../styles/Shop.scss"
 import { useContext, useState } from "react";
 import { productContext } from "../components/ProductProvider";
 import { Link } from "react-router-dom";
+import { cartContext } from "../components/CartProvider";
 export default function Shop () {
     const products = useContext(productContext);
     const [selectedCategories, setSelectedCategories] = useState([]);
-    
+    const {setCart} = useContext(cartContext);
     // Handle category checkbox change
     const handleCategoryChange = (event) => {
         const { name, checked } = event.target;
@@ -18,6 +19,18 @@ export default function Shop () {
     const filteredProducts = products.filter(product =>
         selectedCategories.length === 0 || selectedCategories.includes(product.category)
     );
+
+    function addProducttoCart (item) {
+        setCart(prevCart => {
+            const existingProduct = prevCart.find(p => p.id === item.id);
+            if (!existingProduct) {
+                return [...prevCart, {...item, quantity: 1}];
+            } else {
+                return prevCart.map(p => p.id === item.id ? {...p, quantity: p.quantity + 1} : p)
+            }
+            
+        })
+      }
     return (
         <div className="shop-page">
             <div className="result-navbar">
@@ -51,12 +64,12 @@ export default function Shop () {
                             <li className="filter-item">
                                 <input type="checkbox" name="jewelery" id="jewelery"
                                  onChange={handleCategoryChange}/>
-                                <label htmlFor="jewelery">Jewelry</label>
+                                <label htmlFor="jewelery">Jewelery</label>
                             </li>
                             <li className="filter-item">
                                 <input type="checkbox" name="women's clothing" id="women's clothing"
                                  onChange={handleCategoryChange}/>
-                                <label htmlFor="women's clothing">Women&apos;s clothing</label>
+                                <label htmlFor="women's clothing">Women&apos;s Clothing</label>
                             </li>
                         </ul>
                     </div>
@@ -65,11 +78,17 @@ export default function Shop () {
                     {filteredProducts.map(product => {
                     return (                     
                             <div className="product" key={product.id}>
-                                <Link to={`/productInfo/${product.id}`}>
                                     <div className="img-wrapper">
-                                    <img src={product.image}></img>
-                                </div>
-                                </Link>
+                                        <Link to = {`/productInfo/${product.id}`}>
+                                        <img src={product.image}></img>
+                                        </Link>
+                                        <div className="product_img-layer">
+                                            <i 
+                                            className="fa-solid fa-cart-shopping" 
+                                            onClick={() => addProducttoCart(product)}>
+                                            </i>
+                                        </div>
+                                    </div>
                             <div className="p-description">
                                 <p className="title">{product.title}</p>
                                 <p className="price">${product.price}</p>
