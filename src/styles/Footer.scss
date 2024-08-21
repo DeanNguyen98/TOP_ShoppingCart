@@ -1,0 +1,74 @@
+$border-clr: #F7F5F2;
+$layer-bg: rgba($border-clr, 0.6);
+
+.page-footer {
+    max-width: 1440px;  
+    width: 100%;
+    margin: 0 auto;
+    padding: 125px 50px;
+    background-color: $layer-bg;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 125px;
+    padding-right: 125px;
+}
+
+.links_container {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer_links_ctn {
+    list-style-type: none;
+    h5 {
+        letter-spacing: 1px;
+        padding-bottom: 20px;
+    }
+}
+
+.footer_links_ctn li {
+    padding-bottom: 15px;
+}
+
+.footer_links_ctn li:hover {
+    color: rgba(0,0,0, 0.6);
+    cursor: pointer;
+}
+
+.signUp_container {
+    max-width: 318px;
+}
+
+.footer_github {
+    background: rgba(0,0,0, 0.8);
+    color: #FEFEFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 15px;
+    gap: 10px;
+}
+
+.footer_github a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.subscribe_btn, .subscribe_input {
+    padding: 3px;
+}
+
+.subscribe_btn {
+    background-color: black;
+    color:#fefefe;
+    border: 1px solid black;
+    font-size: .9rem;
+    margin-left: 5px;
+}
