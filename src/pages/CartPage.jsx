@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import "../styles/CartPage.scss";
 import { cartContext } from "../components/CartProvider";
+import { Link } from "react-router-dom";
 export default function CartPage () {
     const {setCart } = useContext(cartContext);
     const [Storagecart,setStoragecart] = useState([]);
@@ -11,7 +12,7 @@ export default function CartPage () {
     
     const TotalPrice = () => {
         return Storagecart.reduce((total, item) => {
-            return total += (item.price * item.quantity);
+            return Math.floor(total += (item.price * item.quantity));
         }, 0)
     }
 
@@ -34,7 +35,10 @@ export default function CartPage () {
             <div className="cart_header">Check Out</div>
             <div className="cartProductContainer">
             {Storagecart.length === 0  && (
-                <div>Your cart is empty.</div>
+                <div className="empty-cart">
+                    <div>There are no products in your cart at the moment.</div>
+                    <div><Link to="/shop">Shop Now </Link></div>
+                </div>
             )}
             {Storagecart.length !== 0 && Storagecart.map(item => {
                 return (

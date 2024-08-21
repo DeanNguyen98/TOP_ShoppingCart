@@ -6,14 +6,35 @@ $border-clr: #F7F5F2;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
 }
 
 .cart_header {
     text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 .cartProductContainer {
     padding: 20px 10px;
+}
+
+.empty-cart {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    gap: 15px;
+}
+
+.empty-cart a {
+    color: black;
+}
+
+.empty-cart a:hover {
+    color: rgba(0,0,0,0.6);
 }
 
 .cart-item {
