@@ -1,4 +1,5 @@
 $border-clr: #F7F5F2;
+$layer-bg: rgba($border-clr, 0.6);
 $border-hover: #FCEBD1;
 
 .shop-page {
@@ -77,16 +78,35 @@ $border-hover: #FCEBD1;
 
 }
 .img-wrapper {
+    position: relative;
     height: 350px;
     width: 300px;
     border: 5px solid $border-clr;
     padding: 20px;
     transition: border 0.2s ease-in-out;
+    overflow: hidden;
         img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
+}
+
+.img-wrapper:hover .product_img-layer {
+    transform: translateY(0);
+}
+.product_img-layer {
+    width: 100%;
+    height: 15%;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $layer-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: transform 0.2s ease-in-out;
 }
 .img-wrapper:hover {
     border: 5px solid $border-hover;
