@@ -5,7 +5,7 @@ export const productContext = createContext();
 export const ProductProvider = ({children}) => {
   const [products, setproducts] = useState([]);
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://fakestoreapi.com/products', {mode: "cors"})
             .then(res=>res.json())
             .then(json=> setproducts(json));
   },[]);
